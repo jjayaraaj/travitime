@@ -1,0 +1,154 @@
+<div class="container-fluid pt-3 pb-5 bg-light">
+  <div class="row">
+    <div class="col-12 col-md-9">
+      <h3>Tour Manager</h3>
+      <div class="tourManager">
+        <div class="p-2 w-20 ">
+          <mat-card>
+            <div class="text-center">
+              <mat-icon color="primary" >flight_takeoff</mat-icon>
+              <h4 class="pt-2">International Tours: 12</h4>
+            </div>
+          </mat-card>
+        </div>
+        <div class="p-2 w-20">
+          <mat-card>
+            <div class="text-center">
+              <mat-icon color="primary" >pin_drop</mat-icon>
+              <h4 class="pt-2">Domestic Tours: 4</h4>
+            </div>
+          </mat-card>
+        </div>
+        <div class="p-2 w-20">
+          <mat-card>
+            <div class="text-center">
+              <mat-icon color="primary" >library_add_check</mat-icon>
+              <h4 class="pt-2">All Tours</h4>
+            </div>
+          </mat-card>
+        </div>
+        <div class="p-2 w-20">
+          <mat-card>
+            <div class="text-center">
+              <mat-icon color="primary" >library_add</mat-icon>
+              <h4 class="pt-2">Add New Tour</h4>
+            </div>
+          </mat-card>
+        </div>
+        <div class="p-2 w-20">
+          <mat-card>
+            <div class="text-center">
+              <mat-icon color="primary" >edit_location</mat-icon>
+              <h4 class="pt-2">Modify Tours</h4>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+
+      <div class="row pt-4 ">
+        <div class="col-12 col-md-8 bg-white">
+          <div class="shadow p-3">
+          <h3>Upcoming Tours</h3>
+          <mat-table [dataSource]="dataSource" >
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <mat-header-cell *matHeaderCellDef [style.display]="'none'" > No. </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name" >
+              <mat-header-cell *matHeaderCellDef [style.display]="'none'"> Name </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="start">
+              <mat-header-cell *matHeaderCellDef [style.display]="'none'"> start </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.start}} </mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="end">
+              <mat-header-cell *matHeaderCellDef [style.display]="'none'"> end </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.end}} </mat-cell>
+            </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="visit">
+                <mat-header-cell *matHeaderCellDef [style.display]="'none'"> visit </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.end}} </mat-cell>
+              </ng-container>
+
+               <!-- Symbol Column -->
+               <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef [style.display]="'none'"> Action </mat-header-cell>
+                <mat-cell *matCellDef="let element">  <mat-icon color="primary" >edit</mat-icon> </mat-cell>
+              </ng-container>
+
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns" [style.display]="'none'"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+
+          <button class="btn btn-dark mt-3"> View all Tours</button>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-4 shadow p-3 bg-white" >
+        <h3>Messages (6 New)</h3>
+        <div class="row p-0 m-0 pb-2 mb-4 border-bottom" *ngFor="let data of [1,2]" >
+          <div class="col-8">
+            <p>Mr. Joshi, Bangalore</p>
+          </div>
+          <div class="col-4">
+            <p><small>View Message</small></p>
+          </div>
+          <div class="col-12 bg-light pt-2">
+            <p>Have uploaded the document, please check and confirm the same</p>
+
+          </div>
+
+        </div>
+        <button class="btn btn-dark mt-1"> View All Messsages</button>
+      </div>
+    </div>
+
+    <div class="pt-4 pl-4">
+      <h3 class="m-0">Short Reads</h3>
+      <h2 class="text-primary m-0">
+        6 Top Benefits of Mobile Apps for Your Travel Business
+      </h2>
+      <p><small>41% of business and 60% of lessiure travel are nowadays made online. Adove Digial Insights</small></p>
+      <button class="btn btn-dark mt-1"> Read More</button>
+    </div>
+
+    </div>
+
+    <div class="col-12 col-md-3">
+      <div class="bg-white p-3">
+        <h3>Around the World</h3>
+        <img src="https://via.placeholder.com/400x120" class="img-fluid">
+        <div class="text-primary h6 pt-2">Changi Airport Offers Free Jewel Tours for transit passangers</div>
+        <p>Have uploaded the document, please check and confirm the sameHave uploaded the document, please check and confirm the sameHave uploaded the document, please check and confirm the sameHave uploaded the document, please check and confirm the same</p>
+      </div>
+
+      <div class="bg-primary p-3 text-light mt-3">
+        My Account
+        <mat-icon class="float-right">account_circle</mat-icon>
+      </div>
+
+
+      <div class="bg-primary p-3 text-light mt-3">
+       Raise a Ticket
+        <mat-icon class="float-right">edit</mat-icon>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<footer class="container-fluid bg-white py-5 "></footer>

@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.bg-primary{ background-color: #1f49b3 !important;}
+
+.navbar-nav li{ border-right: solid 1px #5c73ac;}
+.navbar-nav li a{ color: #c7cede !important;}
+.tourManager .w-20{  width: 20%; float: left;}

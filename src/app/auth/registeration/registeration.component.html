@@ -1,0 +1,81 @@
+<div style="height: 800vh; padding-top: 20vh;">
+    <div class="w-25 m-auto card p-5">
+        <div style="height: 50px;"></div>
+        <form [formGroup] = "registerForm" (ngSubmit)="onLogin()" >
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput
+            formControlName = "firstName"
+            type="text"
+            placeholder="Firstname"
+          >
+          <mat-error *ngIf="f.firstName.invalid" >Please enter first name.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput
+            type="text"
+            formControlName = "lastname"
+            placeholder="Lastname">
+            <mat-error *ngIf="f.lastname.invalid" >Please enter last name.</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input matInput
+            type="text"
+            formControlName = "username"
+            placeholder="Username">
+            <mat-error *ngIf="f.username.invalid" >Please enter username name.</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput
+            type="text"
+            formControlName = "email"
+            placeholder="Email Address">
+            <mat-error *ngIf="f.email.invalid" >Please enter valid email.</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput
+            type="password"
+            formControlName = "password"
+            placeholder="Password">
+            <mat-error *ngIf="f.password.invalid" >Please enter  password.</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Mobile</mat-label>
+            <input matInput
+            type="text"
+            formControlName = "mobile"
+            placeholder="Mobile">
+            <mat-error *ngIf="f.mobile.invalid" >Please enter mobile number</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Select Country</mat-label>
+            <mat-select
+            formControlName="country"
+            >
+              <mat-option *ngFor="let country of countries" [value] = 'country.code' >
+                {{country.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+          <button mat-raised-button type="submit" color="primary">Login</button>
+        </form>
+    </div>
+    </div>
