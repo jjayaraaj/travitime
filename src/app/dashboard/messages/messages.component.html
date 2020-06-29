@@ -1,0 +1,40 @@
+<div class="container-fluid p-5 bg-light">
+  <div class="shadow p-5 bg-white">
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <div class="h5">Messages</div>
+        <div class="bg-primary p-3">
+          <p class="h5 text-white">Sanjeev Kappor</p>
+          <p class="text-white">Tour: Singapore 	Date: 24/Dec/2019</p>
+        </div>
+
+        <div class="bg-white p-3 my-3 border">
+          <mat-selection-list #shoes [multiple]="false" >
+            <mat-list-option *ngFor="let shoe of [1,2,3,4,5,6,7]">
+              Veena Malik
+            </mat-list-option>
+          </mat-selection-list>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-9  ">
+        <div class="w-100 p-4 bg-light">
+          <div *ngFor="let shoe of [1,2,3,4,5,6,7]">
+          <p><strong>Sanjeev (24/ Nov/2019) (4:30 pm):</strong> Have mailed the documents, please check and confirm the tickets.</p>
+          <p><strong><span class="text-primary">Allegiant Tours and Travels (23/ Nov/2019) (11:30 am):</span></strong> Have mailed the documents, please check and confirm the tickets.</p>
+        </div>
+        </div>
+        <div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <button class="btn btn-primary bg-primary rounded-0">Reply</button>
+            </div>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

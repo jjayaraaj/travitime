@@ -1,0 +1,152 @@
+<div class="bg-primary py-2 text-white px-2">Enter Tour Details</div>
+<div class="p-5">
+  <form [formGroup]="itenaryForm" (ngSubmit)="onSubmitForm()">
+
+    <div class="row">
+      <div class="col-12 col-md-4 ">
+        <div class="row ">
+          <div class="col-4 col-md-2">
+            <mat-form-field>
+              <mat-label>Day</mat-label>
+              <input matInput formControlName="day" >
+            </mat-form-field>
+          </div>
+
+          <div class="col-8 col-md-4">
+            <mat-form-field>
+              <mat-label>Date</mat-label>
+              <input
+                matInput
+                formControlName="date"
+                [matDatepicker]="picker2"
+
+              >
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <mat-form-field>
+              <mat-label>Day Title</mat-label>
+              <input matInput formControlName="title">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="border-top">
+          <p class="pt-3">Food</p>
+          <section class="example-section" >
+            <mat-checkbox formControlName="breakfast">Breakfast</mat-checkbox>
+            <mat-checkbox formControlName="lunch" class="px-4">Lunch</mat-checkbox>
+            <mat-checkbox formControlName="dinner" class="">Dinner</mat-checkbox>
+          </section>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <mat-form-field appearance="fill" >
+          <mat-label>Places of Visit & Travel Description</mat-label>
+          <textarea matInput style="height: 120px;" formControlName="description"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="col-12 col-md-2">
+        <mat-form-field>
+          <mat-label>Place of stay</mat-label>
+          <input matInput  formControlName="place">
+        </mat-form-field>
+      </div>
+
+    </div>
+
+
+
+
+  <div class="pt-3"> <button type="submit"  class="btn btn-dark mt-1 rounded-0 px-5"> Save Draft</button></div>
+  </form>
+  <div *ngFor="let itinerary of itinerarys" class="pt-5" >
+  <hr>
+
+  <div class="row pt-5">
+    <div class="col-12 col-md-4 ">
+      <div class="row ">
+        <div class="col-4 col-md-2">
+          <mat-form-field>
+            <mat-label>Day</mat-label>
+            <input matInput disabled value="{{ itinerary.day}}"  >
+          </mat-form-field>
+
+        </div>
+
+        <div class="col-8 col-md-4">
+          <mat-form-field>
+            <mat-label>Date</mat-label>
+            <input
+              matInput
+              value=" {{ itinerary.date | date}}"
+              disabled
+            >
+
+          </mat-form-field>
+
+        </div>
+
+        <div class="col-12 col-md-6">
+          <mat-form-field>
+            <mat-label>Day Title</mat-label>
+            <input matInput disabled value="{{ itinerary.title}}">
+          </mat-form-field>
+
+        </div>
+      </div>
+      <div>
+        <p class="pt-3">Food</p>
+        <section class="example-section" >
+          <mat-checkbox [checked]="itinerary.breakfast" disabled >Breakfast</mat-checkbox>
+          <mat-checkbox [checked]="itinerary.lunch" disabled class="px-4">Lunch</mat-checkbox>
+          <mat-checkbox [checked]="itinerary.dinner" disabled class="">Dinner</mat-checkbox>
+        </section>
+      </div>
+
+
+
+    </div>
+
+
+      <div class="col-12 col-md-6">
+        <mat-form-field appearance="fill" >
+          <mat-label>Places of Visit & Travel Description</mat-label>
+          <textarea matInput style="height: 120px; width: 100%;" disabled>{{ itinerary.description}}</textarea>
+        </mat-form-field>
+
+    </div>
+
+    <div class="col-12 col-md-2">
+      <mat-form-field>
+        <mat-label>Place of stay</mat-label>
+        <input matInput  value="{{ itinerary.place}}" disabled>
+      </mat-form-field>
+
+    </div>
+
+
+
+</div>
+  <div class="row">
+    <div class="col-3">
+      <div class="">
+        <button mat-button class="bg-primary text-white" (click)="onClickEdit()">
+          <mat-icon>edit</mat-icon>
+
+        </button>
+        &nbsp;&nbsp;
+        <button mat-button class="bg-danger text-white">
+          <mat-icon>delete</mat-icon>
+
+        </button>
+        </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,60 @@
+
+<form [formGroup]="travellerEditForm" (ngSubmit) = "onsubmit()">
+<h1 mat-dialog-title>Edit Traveller</h1>
+<hr>
+<div mat-dialog-content>
+  <div class="row">
+    <div class="col-12 col-md-6 pb-3">
+      <mat-form-field>
+        <mat-label>Traveller Name</mat-label>
+        <input matInput formControlName="travellerName" >
+      </mat-form-field>
+    </div>
+    <div class="col-12 col-md-3  pb-3">
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option [value]='"male"' >Male</mat-option>
+          <mat-option [value]='"female"' >Female</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-12 col-md-3  pb-3">
+      <mat-form-field>
+        <mat-label>D.O.B</mat-label>
+        <input
+          matInput
+          formControlName="dob"
+          [matDatepicker]="picker2"
+        >
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-12 col-md-4  pb-3">
+      <mat-form-field>
+        <mat-label>Nationality</mat-label>
+          <input matInput formControlName="nationality">
+      </mat-form-field>
+    </div>
+    <div class="col-12 col-md-4  pb-3">
+      <mat-form-field>
+        <mat-label>Passport No</mat-label>
+          <input matInput formControlName="passportNo">
+      </mat-form-field>
+    </div>
+    <div class="col-12 col-md-4  pb-3">
+      <mat-checkbox formControlName="senior">Senior Citizen</mat-checkbox>
+    </div>
+  </div>
+
+
+
+
+</div>
+<div  class="text-center ">
+  <button mat-raised-button [mat-dialog-close]=""  cdkFocusInitial>Save</button>
+</div>
+
+</form>
+

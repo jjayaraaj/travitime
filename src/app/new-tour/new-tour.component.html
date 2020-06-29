@@ -1,0 +1,8 @@
+<div class="contianer-fluid p-5">
+<mat-card class="p-0">
+<app-tour  ></app-tour>
+<app-group [tourId]="tourId" (tourCreated)="onTourAdded($event)"></app-group>
+<app-traveller></app-traveller>
+<app-itinerary></app-itinerary>
+</mat-card>
+</div>

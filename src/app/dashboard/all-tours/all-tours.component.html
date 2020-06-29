@@ -1,0 +1,97 @@
+<div class="p-5 bg-light">
+  <div class="mat-elevation-z8 shadow-sm">
+    <table mat-table [dataSource]="dataSource">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="sno">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let i = index;"> {{i + 1}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="tourName">
+        <th mat-header-cell *matHeaderCellDef> Tour Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.tourName}} </td>
+      </ng-container>
+
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="days">
+        <th mat-header-cell *matHeaderCellDef> Days </th>
+        <td mat-cell *matCellDef="let element"> {{element.noOfDays}} </td>
+      </ng-container>
+
+       <!-- Symbol Column -->
+       <ng-container matColumnDef="from">
+        <th mat-header-cell *matHeaderCellDef> From </th>
+        <td mat-cell *matCellDef="let element"> {{element.fromDate | date}} </td>
+      </ng-container>
+
+       <!-- Symbol Column -->
+       <ng-container matColumnDef="to">
+        <th mat-header-cell *matHeaderCellDef> To </th>
+        <td mat-cell *matCellDef="let element"> {{element.toDate | date}} </td>
+      </ng-container>
+
+       <!-- Symbol Column -->
+       <ng-container matColumnDef="purpose">
+        <th mat-header-cell *matHeaderCellDef> Purpose </th>
+        <td mat-cell *matCellDef="let element"> {{element.natureOfTravel}} </td>
+      </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element">
+           <small>
+            <span *ngIf="element.publish === 1; else dangerCircle" class="material-icons text-success"  color="success">
+              check_circle
+              </span>
+              <ng-template #dangerCircle>
+                <span  class="material-icons text-warning"  >
+                  stop_circle
+                  </span>
+              </ng-template>
+          </small>
+          </td>
+        </ng-container>
+
+
+          <!-- Symbol Column -->
+       <ng-container matColumnDef="view">
+        <th mat-header-cell *matHeaderCellDef> View </th>
+        <td mat-cell *matCellDef="let element"> <span class="material-icons">
+          remove_red_eye
+          </span> </td>
+      </ng-container>
+
+          <!-- Symbol Column -->
+       <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let element" (click)="onClickEdit(element._id)"> <span class="material-icons">
+          edit
+          </span> </td>
+      </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="exportPDF">
+          <th mat-header-cell *matHeaderCellDef> Export PDF </th>
+          <td mat-cell *matCellDef="let element"> <span class="material-icons">
+            picture_as_pdf
+            </span> </td>
+        </ng-container>
+
+         <!-- Symbol Column -->
+         <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef> Delete </th>
+          <td mat-cell *matCellDef="let element"> <span class="material-icons text-danger">
+            delete_outline
+            </span> </td>
+        </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+</div>

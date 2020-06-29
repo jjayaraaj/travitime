@@ -1,0 +1,18 @@
+table{ width:100%}
+.mat-header-cell{background-color: #1f49b3 ; color: #fff;;}
+.mat-column-edit{
+  flex: 0 0 5% !important;
+  width:5% !important;
+  cursor: pointer;
+}
+.mat-column-sno{
+  flex: 0 0 5% !important;
+  width:5% !important;
+  cursor: pointer;
+}
+
+.mat-column-tourName{
+  flex: 0 0 28% !important;
+  width:28% !important;
+  cursor: pointer;
+}

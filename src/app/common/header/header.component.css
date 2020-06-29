@@ -1,0 +1,5 @@
+.dropdown-menu mat-icon {
+  font-size: .9em;
+}
+.dropdown-item { border-bottom: solid 1px #ccc;}
+.dropdown-menu a {font-size: .9em; color: #1f49b3 !important;}

@@ -1,12 +1,13 @@
-<div style="height: 800vh; padding-top: 20vh;">
-<div class="w-25 m-auto card p-5">
-    <div style="height: 50px;"></div>
+<div style=" padding-top: 10vh;">
+<div class=" m-auto card p-5 pb-0" style="width: 30%;">
+
     <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
 
-    
+      <p class="h5 text-center">Enterprise Account Login</p>
+      <p class="text-center pb-4">For your protection, please verify your identity.</p>
     <mat-form-field class="example-full-width">
         <mat-label>Username</mat-label>
-        <input matInput 
+        <input matInput
         name="email"
         ngModel
         type="email"
@@ -16,21 +17,31 @@
         email>
         <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
       </mat-form-field>
-    
+
       <mat-form-field class="example-full-width">
         <mat-label>Password</mat-label>
-        <input matInput 
+        <input matInput
         type="password"
         name="password"
         ngModel
         #passwordInput="ngModel"
-        required 
+        required
         placeholder="*********">
         <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
       </mat-form-field>
 
-     
-      <button mat-raised-button type="submit" color="primary">Login</button>
+      <div class="text-center pt-3">
+      <button mat-raised-button type="submit" class="bg-primary-dark text-white px-5 rounded-0" >Login</button>
+      <p class="pt-2 m-0"><small>Forgot Password</small></p>
+      <p class=""><small>Having trouble logging-in?</small></p>
+    </div>
+    <div class="w-50 m-auto">
+      <img src="assets/logo.png" class="img-fluid" alt="">
+    </div>
+    <div class="text-center pt-3">
+    <p class=""><small>Modernize Travel Experience</small></p>
+    <p class=""><small>Not a member yet? Subscribe your Travel Organisation with Travitime.</small></p>
+  </div>
     </form>
 </div>
 </div>

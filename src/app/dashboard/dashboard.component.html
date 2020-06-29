@@ -21,18 +21,19 @@
         </div>
         <div class="p-2 w-20">
           <mat-card>
-            <div class="text-center">
+            <a [routerLink]="'dashboard/all-tours'"><div class="text-center">
               <mat-icon color="primary" >library_add_check</mat-icon>
               <h4 class="pt-2">All Tours</h4>
-            </div>
+            </div></a>
           </mat-card>
         </div>
         <div class="p-2 w-20">
-          <mat-card>
-            <div class="text-center">
+          <mat-card >
+            <a [routerLink]="'dashboard/new-tour'">
+              <div class="text-center">
               <mat-icon color="primary" >library_add</mat-icon>
               <h4 class="pt-2">Add New Tour</h4>
-            </div>
+            </div></a>
           </mat-card>
         </div>
         <div class="p-2 w-20">
@@ -51,39 +52,41 @@
           <h3>Upcoming Tours</h3>
           <mat-table [dataSource]="dataSource" >
             <!-- Position Column -->
-            <ng-container matColumnDef="position">
+            <ng-container matColumnDef="_id">
               <mat-header-cell *matHeaderCellDef [style.display]="'none'" > No. </mat-header-cell>
-              <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+              <mat-cell *matCellDef="let element; let i = index;">  {{i+1}} </mat-cell>
             </ng-container>
 
             <!-- Name Column -->
-            <ng-container matColumnDef="name" >
+            <ng-container matColumnDef="tourName" >
               <mat-header-cell *matHeaderCellDef [style.display]="'none'"> Name </mat-header-cell>
-              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+              <mat-cell *matCellDef="let element"> {{element.tourName}} </mat-cell>
             </ng-container>
 
             <!-- Weight Column -->
-            <ng-container matColumnDef="start">
+            <ng-container matColumnDef="fromDate">
               <mat-header-cell *matHeaderCellDef [style.display]="'none'"> start </mat-header-cell>
-              <mat-cell *matCellDef="let element"> {{element.start}} </mat-cell>
+              <mat-cell *matCellDef="let element"> {{element.fromDate  | date: 'dd/MM/yyyy'}} </mat-cell>
             </ng-container>
 
             <!-- Symbol Column -->
-            <ng-container matColumnDef="end">
+            <ng-container matColumnDef="toDate">
               <mat-header-cell *matHeaderCellDef [style.display]="'none'"> end </mat-header-cell>
-              <mat-cell *matCellDef="let element"> {{element.end}} </mat-cell>
+              <mat-cell *matCellDef="let element"> {{element.toDate  | date: 'dd/MM/yyyy'}} </mat-cell>
             </ng-container>
 
               <!-- Symbol Column -->
-              <ng-container matColumnDef="visit">
+              <ng-container matColumnDef="country">
                 <mat-header-cell *matHeaderCellDef [style.display]="'none'"> visit </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.end}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.country}} </mat-cell>
               </ng-container>
 
                <!-- Symbol Column -->
                <ng-container matColumnDef="action">
                 <mat-header-cell *matHeaderCellDef [style.display]="'none'"> Action </mat-header-cell>
-                <mat-cell *matCellDef="let element">  <mat-icon color="primary" >edit</mat-icon> </mat-cell>
+                <mat-cell *matCellDef="let element">  <button mat-icon-button color="warn" (click)="onClickEdit(element._id)">
+                  <mat-icon>edit</mat-icon>
+                </button> </mat-cell>
               </ng-container>
 
 
@@ -92,7 +95,7 @@
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
           </mat-table>
 
-          <button class="btn btn-dark mt-3"> View all Tours</button>
+          <a [routerLink]= "'dashboard/all-tours'" class="btn btn-dark mt-3 rounded-0"> View all Tours</a>
         </div>
       </div>
 
@@ -112,7 +115,7 @@
           </div>
 
         </div>
-        <button class="btn btn-dark mt-1"> View All Messsages</button>
+        <a class="btn btn-dark mt-1 text-white rounded-0" [routerLink]="'dashboard/messages'"> View All Messsages</a>
       </div>
     </div>
 

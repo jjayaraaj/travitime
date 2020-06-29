@@ -1,0 +1,52 @@
+<div class="bg-primary py-2 text-white px-2">Group / Travellers Details</div>
+<div class="p-5">
+  <form [formGroup]="groupForm" (ngSubmit)="onSubmitGroup()" >
+  <div class="row">
+    <div class="col-12 col-md-5">
+      <mat-form-field>
+        <mat-label>Family/ Group Name</mat-label>
+        <input matInput
+          formControlName="groupName"
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-5">
+      <mat-form-field>
+        <mat-label>Email Id</mat-label>
+        <input matInput
+          formControlName="emailId"
+        >
+      </mat-form-field>
+    </div>
+    <div class="col-6 col-md-2">
+      <mat-form-field>
+        <mat-label>No Of Travellers</mat-label>
+        <input matInput
+          formControlName="noOfTravellers"
+        >
+      </mat-form-field>
+    </div>
+    <div class="col-6 col-md-2">
+      <mat-form-field>
+        <mat-label>Country Code</mat-label>
+        <input matInput
+          formControlName="countryCode"
+        >
+      </mat-form-field>
+    </div>
+    <div class="col-6 col-md-2">
+      <mat-form-field>
+        <mat-label>Contact Number</mat-label>
+
+        <input matInput
+          formControlName="contactNumber"
+        >
+      </mat-form-field>
+    </div>
+
+
+  </div>
+  <button type="submit"  class="btn btn-dark mt-1 rounded-0 px-5"> Save Draft</button>
+  </form>
+</div>

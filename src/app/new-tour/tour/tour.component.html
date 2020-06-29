@@ -1,0 +1,90 @@
+<div class="bg-primary py-2 text-white px-2">Enter Tour Details</div>
+<div class="p-5">
+  <form [formGroup]="tourForm" (ngSubmit)="onSubmitTour()">
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <mat-form-field>
+        <mat-label>Enter Tour Name</mat-label>
+        <input
+          matInput
+          formControlName="tourName"
+          >
+      </mat-form-field>
+    </div>
+    <div class="col-6 col-md-2">
+      <mat-form-field>
+        <mat-label>From</mat-label>
+        <input
+        matInput
+        formControlName="fromDate"
+        [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-6 col-md-2">
+      <mat-form-field>
+        <mat-label>To</mat-label>
+        <input
+          matInput
+          formControlName="toDate"
+          [matDatepicker]="picker2"
+
+        >
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-6 col-md-2">
+      <mat-form-field>
+        <mat-label>Country</mat-label>
+        <mat-select
+          formControlName="country"
+        >
+        <mat-option *ngFor="let country of countries" [value] = 'country.name' >
+          {{ country.name }}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-6 col-md-2">
+      <mat-form-field>
+        <mat-label>No Of Days</mat-label>
+
+          <input matInput formControlName="noOfDays">
+
+      </mat-form-field>
+    </div>
+    <div class="col-12 col-md-4 pt-4">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          Multicity Travel :
+        </div>
+        <div class="col-12 col-md-8">
+          <mat-radio-group aria-label="Select an option"
+            formControlName="multicity"
+          >
+            <mat-radio-button value="1" class="pr-5">Yes</mat-radio-button>
+            <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-2">
+      <mat-form-field>
+        <mat-label>Nature of Travel</mat-label>
+        <mat-select formControlName="natureOfTravel" >
+          <mat-option [value]="'business'">Business</mat-option>
+          <mat-option [value]="'holiday'">Holiday</mat-option>
+          <mat-option [value]="'lesuire'">Lesuire</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="pt-3">
+    <button type="submit"  class="btn btn-dark mt-1 rounded-0 px-5"> Save Draft</button>
+   </div>
+  </form>
+</div>

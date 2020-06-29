@@ -5,6 +5,10 @@ const mongoose = require('mongoose');
 //routes
 const userRoutes = require('./routes/user');
 const authRoutes = require('./routes/auth');
+const tourRoutes = require('./routes/tour');
+const groupRoutes = require('./routes/group');
+const travellerRoutes = require('./routes/traveller');
+const itineraryRotues = require('./routes/itinerary');
 
 const app = express();
 
@@ -13,7 +17,7 @@ const app = express();
   process.exit(1);
 }*/
 
-mongoose.connect('mongodb://localhost/travitime')
+mongoose.connect('mongodb://localhost/travitime', { useNewUrlParser: true })
   .then(() => console.log('connected to mongodb...'))
   .catch(err => console.error("Could not connect mongodb...", err))
 
@@ -35,6 +39,10 @@ app.use((req, res, next)=>{
 
 app.use("/api/register", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/tour", tourRoutes);
+app.use("/api/group", groupRoutes);
+app.use("/api/traveller", travellerRoutes);
+app.use("/api/itinerary", itineraryRotues);
 
 module.exports = app;
 

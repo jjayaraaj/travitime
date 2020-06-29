@@ -1,11 +1,22 @@
-<div class="container-fluid py-3">
-  <div class="col-12 com-md-4">
-    <img src="https://via.placeholder.com/200x50" class="img-fluid">
+<div *ngIf="userIsAuthendicated">
+<div class="container-fluid py-3" >
+  <div class="row justify-content-between">
+    <div class="col-12 col-md-2 pt-2">
+      <img src="assets/logo.png" class="img-fluid">
+    </div>
+    <div class="col-12 col-md-4 text-right"  *ngIf="userIsAuthendicated">
+      <p><small> Travitime ID:</small> <span class="h4 text-primary"> TRAVISERIES</span></p>
+      <div class="row ">
+        <div class="col-12 col-md-4 ">Welcome, Jayaraj</div>
+        <div class="col-6 col-md-4 "><button class="btn btn-dark btn-block"  > My Account</button></div>
+        <div class="col-6 col-md-4"><button class="btn btn-dark btn-block"  (click)="logout()"> Logout</button></div>
+      </div>
+
+
+    </div>
   </div>
-  <div class="col-12 col-md-4 text-right" >
-    <button class="btn btn-dark" *ngIf="userIsAuthendicated" (click)="logout()"> Logout</button>
   </div>
-</div>
+
 
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
   <div class="container-fluid">
@@ -25,23 +36,15 @@
           Tour Manager
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#"> <mat-icon color="primary" >flight_takeoff</mat-icon>  International Tours</a>
+            <a class="dropdown-item" href="#">  <mat-icon color="primary" >pin_drop</mat-icon> Domestic Tours</a>
+            <a class="dropdown-item" href="#">   <mat-icon color="primary" >library_add_check</mat-icon> All Tours</a>
+            <a class="dropdown-item" href="#">   <mat-icon color="primary" >library_add</mat-icon> Add Tour</a>
+           <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>-->
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-            <a class="dropdown-item" href="#"></a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="#">Messages</a>
         </li>
@@ -58,3 +61,4 @@
     </div>
   </div>
 </nav>
+</div>
